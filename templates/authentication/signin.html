@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SignIn</title>
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    
+}
+body{width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+main{
+    width: 40%;
+    height: 60vh;
+    border: 1px solid black;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px gray;
+    
+
+    
+   
+}
+
+.col1{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: blue;
+    color: black;
+    font-weight: 1000;
+   
+}
+.col1::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-image: url(./Japan.jpg);
+    opacity: 0.2;
+
+}
+.col1Content{
+    width: 80%;
+
+
+}
+
+
+.col1Content hr{
+    width: 50%;
+    margin-bottom: 0.75em;
+
+}
+
+.col1Content h2{
+    margin-bottom: 0.25em;
+    color: white;
+}
+
+.col1Content strong{
+    color: cornsilk;
+}
+
+   
+
+
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 2em;
+    background-color: blue;
+    color: white;
+    border: 0.3px solid white;
+}
+
+.col2{
+    width: 60%;
+    
+}
+
+.head{
+    width: 100%;
+    text-align: center;
+    padding:1em 0; 
+}
+.head h1{
+    color:blue;
+}
+.head h2{
+    margin-top: 0.3em;
+}
+.fa {
+    padding: 5px;
+    font-size: 10px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin{
+    background:#3B5998;
+    color: white;
+  }
+  .fa-instagram{
+    background: rgba(212, 70, 14, 0.918);
+    color: white;
+  }
+
+  .head h1{
+    margin-bottom: 0.1em;
+  }
+  .col2Content1,.col2Content3{
+    width: 80%;
+    margin: auto;
+  }
+.col2Content1 input{
+    width: 100%;
+    height: 30px;
+    margin-top: 0.5em;
+}
+  
+.col2Content2{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.col2Content2 div{
+    margin:1em 2em 0 0 ;
+    
+}
+
+.col2Content2 label{
+    color:blue ;
+}
+.col2Content3{
+    margin-top: 1em;
+}
+
+.SignUp{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+
+    </style>
+</head>
+<body>
+    <main >
+        <div class="col1">
+            <div class="col1Content">
+                <h2>Hey Buddy</h2>
+                <hr/>
+                <strong><h4>Enter Your details to Sign In to your Account</p></strong>
+                
+            </div>
+
+        </div>
+        <div class="col2">
+            <div class="head">
+                <h1>METAVERSE</h1>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <h2>CREATE Account</h2>
+                <p>or Sign In with Gmail</p>
+            </div>
+            <div class="col2Content1">
+            <form action="./signin" method="post">
+                {% csrf_token %}
+                
+                <div>
+                    <label for="username">Enter Your Username:</label>
+                    <input type="text" placeholder="User Name" name="username" id="username" required>
+                </div>
+                
+                
+                <div>
+                    <label for="Password">Enter Your Password:</label>
+                    <input type="password" placeholder="Enter Your Password" name="password" id="password" required>
+                </div>
+                
+                <div class="SignUp">
+                    <a ><button type="submit">Sign in</button></a>
+                </div>
+            </div>
+
+
+        </div>
+        
+
+
+
+    </main>
+</body>
+</html>

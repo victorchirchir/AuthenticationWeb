@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        button{
+            background-color: blue;
+            color: white;
+            margin-top: 1em;
+            width: 100px;
+            height: 40px;
+            border-radius: 12px;
+        }
+        a button{
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover button{
+            color: blue;
+            background-color: white;
+
+        }
+        .alertButton{
+            background-color: grey;
+            width: 3em;
+            height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    {% for message in messages%}
+    <div class="alert alert-{{message.tags}} alert-dismissable fade show " role="alert">
+        <strong>Messsage:</strong>{{message}}
+        <button type="button" class="close alertButton" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+
+    <div><h2>METAVERSE</h2></div>
+
+    {% if user.is_authenticated %}
+    <h3> hello {{ fname }}</h3>
+    <h4>You are Successfully Logged In</h4>
+    <a href="/signout"><button type="submit">Sign Out</button></a>
+  
+
+    {% else %}
+
+    <a href="/signup"><button type="submit">Sign Up</button></a>
+    <a href="/signin"><button type="submit">Sign In</button></a>
+    {% endif %}
+    
+</body>
+</html>
